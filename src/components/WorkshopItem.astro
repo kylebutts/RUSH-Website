@@ -25,7 +25,7 @@ let datetime = new Date(day);
       <p class="mt-1 text-size-0 leading-7 text-mine-shaft-700">
         Presented by {
           presenter_href === "" ? 
-          <span class="text-alice-500">{presenter}</span> : 
+          <span class="">{presenter}</span> : 
           <a class="text-alice-500 underline" href={presenter_href}>{presenter}</a>
         }. {
           coauthors != "" && (<Fragment set:html={coauthors}></Fragment>)
