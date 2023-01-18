@@ -1,0 +1,36 @@
+---
+let ogImage = "https://grad-student-urban-brownbag.netlify.app/og_image.png"
+let description = "RUSH (Regional / Urban / Spatial / Housing) Graduate Student Brownbag"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+    <meta name="description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="twitter:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={description} />
+    <meta name="twitter:description" content={description} />
+
+		<title>RUSH Brownbag</title>
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+	</head>
+	<body class="font-['Inter'] max-w-lg mx-auto px-size-md">
+		<header class="">
+			<h1 class="text-size-3 font-bold text-mine-shaft-800 mt-size-sm lg:mt-size-xl border-mine-shaft-800 border-b-4">
+				<b>RUSH</b> Graduate Student Brownbag
+        <br/>
+        <span class="italic">(Regional / Urban / Spatial / Housing)</span>
+			</h1>
+		</header>
+    <article class="prose prose-a:decoration-alice-500 prose-h2:text-size-2 prose-h2:mt-size-2xl prose-h2:mb-size-sm prose-p:text-size-1 prose-li:text-size-1 max-w-[none] mt-size-md mb-size-3xl">
+		  <slot />
+    </article>
+	</body>
+</html>

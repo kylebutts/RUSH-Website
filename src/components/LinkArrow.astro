@@ -1,0 +1,11 @@
+---
+const { href } = Astro.props
+---
+
+<a
+	href={href}
+	class="group inline-flex align-end justify-between not-prose mt-2 border-b-2 border-alice-700 no-underline text-alice-600 hover:text-alice-700 font-bold text-size-0 italic gap-x-size-2xs mr-size-md mb-size-md"
+>
+	<span><slot /></span>
+	<span class="transition duration-75 group-hover:scale-[1.1] group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">↗</span>
+</a>

@@ -1,0 +1,37 @@
+---
+const {
+  paper, paper_href = "",
+  day, 
+  presenter, presenter_href = "",
+  coauthors = ""
+} = Astro.props;
+
+let datetime = new Date(day);
+---
+
+<article class="not-prose py-size-lg">
+  <div class="lg:max-w-4xl">
+    <div class="flex flex-col items-start">
+      <h2 id="episode-5-title" class="mt-2 text-size-1 font-bold text-mine-shaft-900">
+        {
+          paper_href === "" ? 
+          <Fragment>{paper}</Fragment> : 
+          <a href={paper_href} class="underline decoration-4 text-alice-700">{paper}</a>
+        }
+      </h2>
+      <time datetime={datetime.toISOString()} class="order-first font-mono text-size-0 leading-7 text-mine-shaft-500">
+        {datetime.toDateString()}
+      </time>
+      <p class="mt-1 text-size-0 leading-7 text-mine-shaft-700">
+        Presented by {
+          presenter_href === "" ? 
+          <span class="text-alice-500">{presenter}</span> : 
+          <a class="text-alice-500 underline" href={presenter_href}>{presenter}</a>
+        }. {
+          coauthors != "" && (<Fragment set:html={coauthors}></Fragment>)
+        }
+      </p>
+    </div>
+  </div>
+</article>
+
