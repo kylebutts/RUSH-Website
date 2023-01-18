@@ -17,3 +17,8 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+.gitignore
+.vscode/launch.json
+.gitignore
+.vscode/extensions.json
