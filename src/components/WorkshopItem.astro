@@ -3,25 +3,32 @@ const {
   paper, paper_href = "",
   day, 
   presenter, presenter_href = "",
-  coauthors = ""
+  coauthors = "",
+  type
 } = Astro.props;
 
 let datetime = new Date(day);
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const date_string = `${months[datetime.getMonth()]} ${datetime.getDate()}, ${datetime.getFullYear()}`
+
 ---
 
 <article class="not-prose py-size-lg">
   <div class="lg:max-w-4xl">
     <div class="flex flex-col items-start">
-      <h2 id="episode-5-title" class="mt-2 text-size-1 font-bold text-mine-shaft-900">
+      <h2 id="episode-5-title" class="mt-2 text-size-1 font-bold text-alice-700">
         {
           paper_href === "" ? 
           <Fragment>{paper}</Fragment> : 
           <a href={paper_href} class="underline decoration-4 text-alice-700">{paper}</a>
         }
       </h2>
-      <time datetime={datetime.toISOString()} class="order-first font-mono text-size-0 leading-7 text-mine-shaft-500">
-        {datetime.toDateString()}
-      </time>
+      <p class="order-first font-mono text-size-0 text-mine-shaft-500">
+        <time class="leading-7" datetime={datetime.toISOString()} >
+          {date_string}
+        </time>
+        <span class="font-semibold text-mine-shaft-700">{`(${type})`}</span>
+      </p>
       <p class="mt-1 text-size-0 leading-7 text-mine-shaft-700">
         Presented by {
           presenter_href === "" ? 
