@@ -1,16 +1,24 @@
 ---
+interface Props {
+  paper: string;
+  paper_href?: string;
+  day: string;
+  presenter: string;
+  presenter_href: string;
+  coauthors?: string;
+  type: "30 mins." | "60 mins.";
+}
 const {
   paper, paper_href = "",
   day, 
   presenter, presenter_href = "",
   coauthors = "",
-  type
+  type = "60 mins."
 } = Astro.props;
 
 let datetime = new Date(day);
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const date_string = `${months[datetime.getMonth()]} ${datetime.getDate()}, ${datetime.getFullYear()}`
-
 ---
 
 <article class="not-prose py-size-lg">
